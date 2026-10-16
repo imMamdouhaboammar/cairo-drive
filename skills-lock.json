@@ -1,0 +1,101 @@
+{
+  "version": 1,
+  "skills": {
+    "audio-design": {
+      "source": "gamedev-skills/awesome-gamedev-agent-skills",
+      "sourceType": "github",
+      "skillPath": "skills/disciplines/audio-design/SKILL.md",
+      "computedHash": "1679bac2774f5734ef565475be975fd322aaaba87887145118a0b1abc4b84c0c"
+    },
+    "camera-systems": {
+      "source": "gamedev-skills/awesome-gamedev-agent-skills",
+      "sourceType": "github",
+      "skillPath": "skills/disciplines/camera-systems/SKILL.md",
+      "computedHash": "62e167163fe430dd407a89bf9bb78876be78d251ab3408095af7d2c92c5c2b65"
+    },
+    "find-skills": {
+      "source": "vercel-labs/skills",
+      "sourceType": "github",
+      "skillPath": "skills/find-skills/SKILL.md",
+      "computedHash": "b146008599c31057cef1c145774cea5d5afb30e8f43fa802e47a4b461419aaaf"
+    },
+    "game-feel": {
+      "source": "gamedev-skills/awesome-gamedev-agent-skills",
+      "sourceType": "github",
+      "skillPath": "skills/disciplines/game-feel/SKILL.md",
+      "computedHash": "fd8a092926b904a974494ef9e9d123c6a5f872dfaf2ab8f1affd9d015ec95dc3"
+    },
+    "input-systems": {
+      "source": "gamedev-skills/awesome-gamedev-agent-skills",
+      "sourceType": "github",
+      "skillPath": "skills/disciplines/input-systems/SKILL.md",
+      "computedHash": "2075c8fe590cf19058a1f4834e2f7a41004b43e77d51386f03eec09bd72f70cd"
+    },
+    "optimize-threejs-games": {
+      "source": "mengto/skills",
+      "sourceType": "github",
+      "skillPath": "agent-skills/game-development/optimize-threejs-games/SKILL.md",
+      "computedHash": "c4e92fe1a580f0c204b284b27bcb083011fdee9a3569a30a3b80c93c5b3ff478"
+    },
+    "playwright-best-practices": {
+      "source": "currents-dev/playwright-best-practices-skill",
+      "sourceType": "github",
+      "skillPath": "playwright-best-practices/SKILL.md",
+      "computedHash": "7eb144f734450fee649dc1d209114775ddda07cbf45be84fe969d3d4f3971dce"
+    },
+    "procedural-gen": {
+      "source": "gamedev-skills/awesome-gamedev-agent-skills",
+      "sourceType": "github",
+      "skillPath": "skills/disciplines/procedural-gen/SKILL.md",
+      "computedHash": "b55735586c0b4cf7c4db06ca3818cce679bb2fe99d4abe838a03083e8b135d37"
+    },
+    "r3f-best-practices": {
+      "source": "emalorenzo/three-agent-skills",
+      "sourceType": "github",
+      "skillPath": "skills/r3f-best-practices/SKILL.md",
+      "computedHash": "d15cf5c47c35125afb4bfb079c3da515a34152f9839985065270a85e6bf36fb5"
+    },
+    "r3f-fundamentals": {
+      "source": "enzed/r3f-skills",
+      "sourceType": "github",
+      "skillPath": "skills/r3f-fundamentals/SKILL.md",
+      "computedHash": "b2ceee76273a7b3dbfef647ce0b2c7977c65f4a7196daebd0a528252b930fd2e"
+    },
+    "r3f-physics": {
+      "source": "enzed/r3f-skills",
+      "sourceType": "github",
+      "skillPath": "skills/r3f-physics/SKILL.md",
+      "computedHash": "d89b76279feba2ab8abf185a1572e0ad2ac0bdcc739dbe17f2f033ef9326bc41"
+    },
+    "save-systems": {
+      "source": "gamedev-skills/awesome-gamedev-agent-skills",
+      "sourceType": "github",
+      "skillPath": "skills/disciplines/save-systems/SKILL.md",
+      "computedHash": "1ce25859071b68e57b6c78f497b18d3c78b1b91d1fb74bd5e97e5ff5887274e7"
+    },
+    "test-playable-web-games": {
+      "source": "mengto/skills",
+      "sourceType": "github",
+      "skillPath": "agent-skills/game-development/test-playable-web-games/SKILL.md",
+      "computedHash": "8a7402ca383ead9c295de6b10f8c9aafe95822a4cd9aedaa1e61129e1aaeea80"
+    },
+    "vite": {
+      "source": "antfu/skills",
+      "sourceType": "github",
+      "skillPath": "skills/vite/SKILL.md",
+      "computedHash": "88ee465fd10f711efecc76e91e96accae2b229dda371614dcf219099c264a486"
+    },
+    "vitest": {
+      "source": "antfu/skills",
+      "sourceType": "github",
+      "skillPath": "skills/vitest/SKILL.md",
+      "computedHash": "21af2b13d47d31f3094b61c0f41abc8d6a7eed0df3c9a4029ea671f6978b7209"
+    },
+    "zustand": {
+      "source": "lobehub/lobehub",
+      "sourceType": "github",
+      "skillPath": ".agents/skills/zustand/SKILL.md",
+      "computedHash": "71346e6aa594f2b823a5c3826e4498b6790d5adef2e9c87b16d4a78c70ae9341"
+    }
+  }
+}

@@ -1,0 +1,624 @@
+/* Cairo Drive - Automotive Open World HUD Styling */
+
+:root {
+  --cairo-gold: #f59e0b;
+  --cairo-blue: #0284c7;
+  --cairo-nile: #06b6d4;
+  --cairo-red: #ef4444;
+  --cairo-dark: rgba(11, 15, 25, 0.88);
+  --cairo-glass: rgba(18, 24, 38, 0.78);
+  --cairo-border: rgba(255, 255, 255, 0.12);
+  --cairo-glow: 0 0 20px rgba(56, 189, 248, 0.35);
+}
+
+/* Glassmorphism utility */
+.cairo-glass-panel {
+  background: var(--cairo-glass);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid var(--cairo-border);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.55), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+}
+
+/* Top Center District Street Sign (Egyptian Road Plate Motif) */
+.cairo-street-sign {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 8px 20px 8px 16px;
+  border-radius: 9999px;
+  background: linear-gradient(135deg, rgba(15, 30, 54, 0.92) 0%, rgba(8, 18, 34, 0.95) 100%);
+  border: 1.5px solid rgba(245, 158, 11, 0.45);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.7), 0 0 25px rgba(245, 158, 11, 0.15);
+  pointer-events: auto;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 20;
+}
+
+.cairo-sign-crest {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #f59e0b 0%, #b45309 100%);
+  color: #0d1117;
+  box-shadow: 0 0 12px rgba(245, 158, 11, 0.5);
+  font-size: 18px;
+}
+
+.cairo-sign-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cairo-arabic-name {
+  font-family: 'Cairo', sans-serif;
+  font-size: 19px;
+  font-weight: 800;
+  color: #f8fafc;
+  line-height: 1.2;
+  letter-spacing: 0.3px;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+}
+
+.cairo-english-name {
+  font-family: 'Chakra Petch', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  color: #94a3b8;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+}
+
+.cairo-speed-badge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 2.5px solid #ef4444;
+  background: #ffffff;
+  color: #0f172a;
+  font-family: 'Chakra Petch', sans-serif;
+  font-weight: 900;
+  font-size: 13px;
+  line-height: 1;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Radar Minimap Container */
+.cairo-radar-bezel {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 190px;
+  height: 190px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(15, 23, 42, 0.85) 0%, rgba(6, 11, 20, 0.95) 100%);
+  border: 2px solid rgba(56, 189, 248, 0.4);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.75), 0 0 20px rgba(56, 189, 248, 0.2);
+  overflow: hidden;
+  pointer-events: auto;
+  z-index: 20;
+  transition: transform 0.25s ease;
+}
+
+.cairo-radar-compass {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border-radius: 50%;
+  border: 1px dashed rgba(56, 189, 248, 0.2);
+}
+
+.cairo-compass-label {
+  position: absolute;
+  font-size: 10px;
+  font-weight: 900;
+  color: #38bdf8;
+  font-family: 'Chakra Petch', sans-serif;
+}
+
+.cairo-compass-n { top: 4px; left: 50%; transform: translateX(-50%); color: #f59e0b; }
+.cairo-compass-s { bottom: 4px; left: 50%; transform: translateX(-50%); }
+.cairo-compass-w { left: 5px; top: 50%; transform: translateY(-50%); }
+.cairo-compass-e { right: 5px; top: 50%; transform: translateY(-50%); }
+
+.cairo-radar-legend {
+  position: absolute;
+  bottom: 6px;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  font-size: 9px;
+  font-weight: 800;
+  color: rgba(226, 232, 240, 0.7);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* Action Toolbar */
+.cairo-action-bar {
+  position: absolute;
+  bottom: 24px;
+  left: 24px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  pointer-events: auto;
+  z-index: 20;
+}
+
+.cairo-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  height: 42px;
+  padding: 0 16px;
+  border-radius: 12px;
+  font-family: 'Cairo', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  color: #f1f5f9;
+  background: rgba(18, 25, 42, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
+}
+
+.cairo-btn:hover {
+  background: rgba(30, 41, 65, 0.95);
+  border-color: rgba(56, 189, 248, 0.5);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.5), 0 0 15px rgba(56, 189, 248, 0.25);
+}
+
+.cairo-btn:active {
+  transform: translateY(1px);
+}
+
+.cairo-btn-horn {
+  background: linear-gradient(135deg, rgba(239, 68, 68, 0.9) 0%, rgba(185, 28, 28, 0.9) 100%);
+  border-color: rgba(239, 68, 68, 0.5);
+  color: #ffffff;
+}
+
+.cairo-btn-horn:hover {
+  background: linear-gradient(135deg, rgba(248, 113, 113, 0.95) 0%, rgba(220, 38, 38, 0.95) 100%);
+  border-color: #ef4444;
+  box-shadow: 0 8px 25px rgba(239, 68, 68, 0.4);
+}
+
+.cairo-btn-active {
+  border-color: var(--cairo-gold);
+  background: rgba(245, 158, 11, 0.15);
+  color: var(--cairo-gold);
+}
+
+.cairo-key-badge {
+  display: inline-block;
+  padding: 2px 6px;
+  background: rgba(0, 0, 0, 0.45);
+  border-radius: 4px;
+  font-family: 'Chakra Petch', monospace;
+  font-size: 10px;
+  color: #94a3b8;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Master Instrument Speedometer & Tachometer Cluster */
+.cairo-cluster-container {
+  position: absolute;
+  bottom: 24px;
+  right: 24px;
+  display: flex;
+  align-items: flex-end;
+  gap: 16px;
+  padding: 16px 20px;
+  border-radius: 24px;
+  background: radial-gradient(circle at 70% 30%, rgba(18, 26, 44, 0.92) 0%, rgba(9, 14, 26, 0.96) 100%);
+  border: 1.5px solid rgba(56, 189, 248, 0.25);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.75), inset 0 1px 0 rgba(255, 255, 255, 0.12), 0 0 30px rgba(2, 132, 199, 0.15);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  pointer-events: auto;
+  z-index: 20;
+}
+
+.cairo-gauge-dial {
+  position: relative;
+  width: 170px;
+  height: 170px;
+}
+
+.cairo-gauge-center {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.cairo-digital-speed {
+  font-family: 'Chakra Petch', sans-serif;
+  font-size: 56px;
+  font-weight: 900;
+  color: #f8fafc;
+  line-height: 0.9;
+  letter-spacing: -1px;
+  text-shadow: 0 0 25px rgba(56, 189, 248, 0.6), 0 4px 10px rgba(0, 0, 0, 0.8);
+}
+
+.cairo-speed-unit {
+  font-family: 'Chakra Petch', sans-serif;
+  font-size: 11px;
+  font-weight: 800;
+  color: #94a3b8;
+  letter-spacing: 2px;
+  margin-top: 4px;
+}
+
+/* Gear Indicator Pill */
+.cairo-gear-badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  font-family: 'Chakra Petch', sans-serif;
+  font-size: 28px;
+  font-weight: 900;
+  color: #ffffff;
+  background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
+  border: 1.5px solid rgba(56, 189, 248, 0.5);
+  box-shadow: 0 6px 18px rgba(2, 132, 199, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  transition: all 0.15s ease;
+}
+
+.cairo-gear-reverse {
+  background: linear-gradient(135deg, #ef4444 0%, #b91c1c 100%);
+  border-color: #f87171;
+  box-shadow: 0 6px 20px rgba(239, 68, 68, 0.5);
+}
+
+.cairo-gear-neutral {
+  background: linear-gradient(135deg, #475569 0%, #334155 100%);
+  border-color: #94a3b8;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+/* Shift light segment bar */
+.cairo-shift-lights {
+  display: flex;
+  gap: 4px;
+  margin-bottom: 8px;
+}
+
+.cairo-shift-led {
+  flex: 1;
+  height: 6px;
+  border-radius: 3px;
+  background: rgba(255, 255, 255, 0.1);
+  transition: background 0.05s ease, box-shadow 0.05s ease;
+}
+
+.cairo-shift-led.green {
+  background: #10b981;
+  box-shadow: 0 0 8px #10b981;
+}
+
+.cairo-shift-led.amber {
+  background: #f59e0b;
+  box-shadow: 0 0 10px #f59e0b;
+}
+
+.cairo-shift-led.red {
+  background: #ef4444;
+  box-shadow: 0 0 12px #ef4444;
+}
+
+/* Indicators column (Handbrake, Headlights, RPM bar) */
+.cairo-cluster-aux {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-width: 130px;
+  height: 100%;
+}
+
+.cairo-aux-icons {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.cairo-icon-indicator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #64748b;
+  transition: all 0.2s ease;
+}
+
+.cairo-icon-indicator.active-red {
+  background: rgba(239, 68, 68, 0.2);
+  border-color: #ef4444;
+  color: #ef4444;
+  box-shadow: 0 0 12px rgba(239, 68, 68, 0.4);
+  animation: pulse 1s infinite;
+}
+
+.cairo-icon-indicator.active-cyan {
+  background: rgba(6, 182, 212, 0.2);
+  border-color: #06b6d4;
+  color: #06b6d4;
+  box-shadow: 0 0 12px rgba(6, 182, 212, 0.4);
+}
+
+.cairo-rpm-text {
+  font-family: 'Chakra Petch', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  color: #cbd5e1;
+  letter-spacing: 0.5px;
+}
+
+.cairo-rpm-text.redline {
+  color: #ef4444;
+  font-weight: 900;
+  animation: pulse 0.5s infinite;
+}
+
+/* Mobile Virtual Pedals & Steering Overlay */
+.cairo-mobile-controls {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 15;
+}
+
+.cairo-mobile-steering {
+  position: absolute;
+  bottom: 90px;
+  left: 24px;
+  display: flex;
+  gap: 12px;
+  pointer-events: auto;
+}
+
+.cairo-steer-btn {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: rgba(15, 23, 42, 0.85);
+  border: 2px solid rgba(56, 189, 248, 0.4);
+  color: #f8fafc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  font-weight: 900;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  touch-action: manipulation;
+  user-select: none;
+}
+
+.cairo-steer-btn:active {
+  background: rgba(56, 189, 248, 0.35);
+  border-color: #38bdf8;
+  transform: scale(0.92);
+}
+
+.cairo-mobile-pedals {
+  position: absolute;
+  bottom: 90px;
+  right: 24px;
+  display: flex;
+  align-items: flex-end;
+  gap: 14px;
+  pointer-events: auto;
+}
+
+.cairo-pedal-brake {
+  width: 70px;
+  height: 60px;
+  border-radius: 12px;
+  background: linear-gradient(to top, #7f1d1d 0%, #dc2626 100%);
+  border: 2px solid #ef4444;
+  color: #ffffff;
+  font-family: 'Chakra Petch', sans-serif;
+  font-weight: 800;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 20px rgba(220, 38, 38, 0.4);
+  cursor: pointer;
+  touch-action: manipulation;
+}
+
+.cairo-pedal-throttle {
+  width: 60px;
+  height: 100px;
+  border-radius: 12px;
+  background: linear-gradient(to top, #047857 0%, #10b981 100%);
+  border: 2px solid #34d399;
+  color: #ffffff;
+  font-family: 'Chakra Petch', sans-serif;
+  font-weight: 800;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 20px rgba(16, 185, 129, 0.4);
+  cursor: pointer;
+  touch-action: manipulation;
+}
+
+.cairo-pedal-throttle:active,
+.cairo-pedal-brake:active {
+  transform: scale(0.95);
+  filter: brightness(1.2);
+}
+
+/* Modal Window Styles */
+.cairo-modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  pointer-events: auto;
+}
+
+.cairo-modal-window {
+  width: 90%;
+  max-width: 600px;
+  max-height: 85vh;
+  overflow-y: auto;
+  border-radius: 24px;
+  background: radial-gradient(circle at 50% 0%, rgba(20, 30, 50, 0.96) 0%, rgba(10, 16, 28, 0.98) 100%);
+  border: 1.5px solid rgba(245, 158, 11, 0.4);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.85), 0 0 35px rgba(245, 158, 11, 0.15);
+  padding: 24px;
+  color: #f1f5f9;
+}
+
+.cairo-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 16px;
+  margin-bottom: 20px;
+}
+
+.cairo-tab-bar {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.cairo-tab-btn {
+  flex: 1;
+  padding: 8px 12px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.05);
+  color: #94a3b8;
+  font-family: 'Cairo', sans-serif;
+  font-weight: 700;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.cairo-tab-btn.active {
+  background: var(--cairo-gold);
+  color: #0f172a;
+  border-color: var(--cairo-gold);
+  font-weight: 900;
+  box-shadow: 0 4px 15px rgba(245, 158, 11, 0.3);
+}
+
+.cairo-key-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 14px;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 8px;
+  margin-bottom: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* Audio Start Prompt Toast */
+.cairo-audio-prompt {
+  position: absolute;
+  top: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(2, 132, 199, 0.95);
+  color: #ffffff;
+  padding: 8px 18px;
+  border-radius: 9999px;
+  font-family: 'Cairo', sans-serif;
+  font-weight: 700;
+  font-size: 13px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+  pointer-events: auto;
+  cursor: pointer;
+  animation: pulse 1.5s infinite;
+  z-index: 20;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.85; transform: scale(1.02); }
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 768px) {
+  .cairo-cluster-container {
+    bottom: 12px;
+    right: 12px;
+    padding: 10px 14px;
+    gap: 10px;
+  }
+  .cairo-gauge-dial {
+    width: 130px;
+    height: 130px;
+  }
+  .cairo-digital-speed {
+    font-size: 40px;
+  }
+  .cairo-action-bar {
+    bottom: 12px;
+    left: 12px;
+    gap: 6px;
+  }
+  .cairo-btn {
+    height: 38px;
+    padding: 0 10px;
+    font-size: 11px;
+  }
+  .cairo-radar-bezel {
+    width: 140px;
+    height: 140px;
+    top: 12px;
+    right: 12px;
+  }
+  .cairo-street-sign {
+    top: 12px;
+    padding: 6px 14px;
+  }
+  .cairo-arabic-name {
+    font-size: 15px;
+  }
+}

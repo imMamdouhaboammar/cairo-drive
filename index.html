@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚗</text></svg>" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Cairo Drive | تجربة قيادة في شوارع القاهرة</title>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Chakra+Petch:wght@500;700&display=swap');
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        user-select: none;
+        -webkit-user-select: none;
+      }
+
+      html, body {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        background-color: #0d0f12;
+        font-family: 'Cairo', system-ui, -apple-system, sans-serif;
+        color: #f1f5f9;
+      }
+
+      #game-container {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+      }
+
+      #game-canvas {
+        width: 100%;
+        height: 100%;
+        display: block;
+        outline: none;
+      }
+
+      #ui-root {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: 10;
+      }
+
+      .interactive {
+        pointer-events: auto;
+      }
+
+      /* Custom lil-gui styling for Cairo aesthetic */
+      .lil-gui {
+        --background-color: rgba(18, 20, 26, 0.88);
+        --text-color: #f8fafc;
+        --title-background-color: rgba(220, 90, 30, 0.85);
+        --widget-color: rgba(30, 35, 45, 0.9);
+        --hover-color: rgba(235, 120, 40, 0.9);
+        --focus-color: #f59e0b;
+        --number-color: #38bdf8;
+        --string-color: #34d399;
+        font-family: 'Cairo', sans-serif !important;
+        border-radius: 8px;
+        backdrop-filter: blur(8px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+      }
+    </style>
+  </head>
+  <body>
+    <div id="game-container">
+      <canvas id="game-canvas"></canvas>
+      <div id="ui-root"></div>
+    </div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
